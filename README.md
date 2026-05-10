@@ -121,8 +121,6 @@ Na konci druhého týdne by měla být hotová povinná část zadání.
 
 Budete potřebovat:
 
-- Windows,
-- PowerShell,
 - Visual Studio Code,
 - Git,
 - Node.js a npm,
@@ -136,15 +134,6 @@ Postup:
 
 1. Otevřete oficiální dokumentaci: <https://code.visualstudio.com/docs/setup/windows>
 2. Nainstalujte Visual Studio Code pro Windows.
-3. Po instalaci zavřete a znovu otevřete PowerShell.
-
-Ověření v PowerShellu:
-
-```powershell
-code --version
-```
-
-Pokud příkaz `code` nefunguje, nevadí. Visual Studio Code můžete otevřít přes nabídku Start a projekt otevřít přes `File -> Open Folder...`.
 
 ### Git
 
@@ -162,14 +151,18 @@ Ověření:
 git --version
 ```
 
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-terminal-git-version.png)
+
 Nastavení jména a e-mailu:
 
 ```powershell
-git config --global user.name "Jan Novak"
-git config --global user.email "jan.novak@example.com"
+git config --global user.name "Marek Olsak"
+git config --global user.email "marek.olsak@blogic.cz"
 ```
 
 Použijte ideálně stejný e-mail, jaký máte na GitHubu.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-terminal-git-user.png)
 
 ### Node.js a npm
 
@@ -190,16 +183,16 @@ npm -v
 
 Pokud příkaz není rozpoznán, nejčastěji pomůže zavřít a znovu otevřít PowerShell. Pokud problém trvá, požádejte o pomoc mentora.
 
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-terminal-git-node-version.png)
+
 ---
 
 ## 7. Příprava Visual Studio Code
 
-Po otevření projektu ve VS Code:
+Po otevření projektu ve Visual Studio Code:
 
 1. Otevřete projektovou složku.
-2. Otevřete integrovaný terminál přes `Terminal -> New Terminal`.
-3. Zkontrolujte, že terminál používá PowerShell.
-4. Nainstalujte doporučená rozšíření projektu.
+2. Nainstalujte doporučená rozšíření projektu.
 
 V projektu může být připravený seznam doporučených rozšíření v souboru `.vscode/extensions.json`.
 
@@ -208,37 +201,38 @@ Doporučená rozšíření:
 - **Biome** pro kontrolu a formátování kódu,
 - **EditorConfig** pro sjednocené formátování,
 
-Pokud se v projektu nepoužívá Tailwind CSS, není potřeba instalovat Tailwind rozšíření.
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-extensions.png)
 
 ---
 
 ## 8. Získání vlastní kopie projektu
 
-Budete pracovat ve svém forku. Fork je vaše vlastní kopie repozitáře na GitHubu.
+Budete pracovat ve svém vlastním repozitáři. Repozitář vyvoříte pomocí připravené šablony na GitHubu.
 
 Postup:
 
-1. Na GitHubu otevřete výchozí repozitář projektu.
-2. Klikněte na `Fork`.
-3. Podle dokumentace GitHubu vytvořte vlastní kopii: <https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo>
-4. Ve svém forku zkopírujte URL repozitáře.
+1. Přihlaste se na GitHub a otevřete [repozitář](https://github.com/Marsiso/blum-next-app-template) se šablonou projektu.
+2. Klikněte na tlačítka `Use this template` a `Create a new repository`.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/github-template-create-repository.png)
+
+3. Vyplňte název repozitáře a klikněte na tlačítko `Create repository`.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/github-template-create-repository-form.png)
+
+4. Ve svém repozitáří zkopírujte URL repozitáře.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/github-clone-repository.png)
+
 5. Naklonujte projekt do počítače.
 
-Příklad příkazů:
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-new-window-clone-git-repository.png)
 
-```powershell
-git clone https://github.com/YOUR-USERNAME/blum-next-app-template.git
-cd blum-next-app-template
-code .
-```
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-new-window-clone-git-repository-prompt.png)
 
-Pokud příkaz `code .` nefunguje, otevřete Visual Studio Code ručně a použijte `File -> Open Folder...`.
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-new-window-clone-git-repository-destination.png)
 
-Kontrolní bod:
-
-- ve VS Code vidíte složky projektu,
-- v terminálu jste ve složce projektu,
-- vidíte soubory jako `package.json`, `src`, `public` nebo `messages`.
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-new-window-clone-git-repository-trust-authors-prompt.png)
 
 ---
 
@@ -264,13 +258,9 @@ Poté otevřete v prohlížeči:
 http://localhost:3000
 ```
 
-Kontrolní bod:
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-terminal-launch-project.png)
 
-- v terminálu není chyba, která zastavila běh aplikace,
-- v prohlížeči se otevře aplikace,
-- při úpravě souboru se stránka po uložení obnoví nebo změnu uvidíte po ručním obnovení stránky.
-
-Pokud projekt nejde spustit, podívejte se do sekce [Když něco nefunguje](#14-když-něco-nefunguje).
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-terminal-launch-project-browser.png)
 
 ---
 
@@ -366,145 +356,65 @@ Cílem je jednoduchá, čitelná a použitelná aplikace, ne složitý design.
 
 ---
 
-## 12. První bezpečná změna
-
-První změna má sloužit hlavně k ověření, že dokážete upravit projekt a vidět výsledek v prohlížeči.
-
-Doporučený postup:
-
-1. Najděte existující stránku v projektu.
-2. Změňte krátký text nebo nadpis.
-3. Uložte soubor.
-4. Ověřte změnu v prohlížeči.
-5. Vraťte text zpět nebo pokračujte další malou úpravou.
-
-Pokud chcete vytvořit novou testovací stránku, nejdříve se podívejte:
-
-- jak v projektu vypadá existující soubor `page.tsx`,
-- kde je uložený,
-- jaká adresa v prohlížeči mu odpovídá.
-
-Oficiální dokumentace k orientaci:
-
-- Next.js Project Structure: <https://nextjs.org/docs/app/getting-started/project-structure>
-- Next.js App Router: <https://nextjs.org/docs/app>
-
-Kontrolní bod:
-
-- našli jste stránku v projektu,
-- provedli jste malou změnu,
-- změna se zobrazila v prohlížeči,
-- víte, který soubor jste upravili.
-
----
-
-## 13. Git a GitHub bez stresu
+## 12. Git a GitHub bez stresu
 
 Git slouží k ukládání změn. GitHub slouží k tomu, aby byla vaše práce uložená online a mohla být odevzdána.
 
 Doporučený jednoduchý postup:
 
 1. Vytvořit novou větev.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-create-branch.png)
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-create-branch-name-prompt.png)
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-create-branch-and-checkout.png)
+
 2. Udělat změnu.
 3. Zkontrolovat změněné soubory.
 4. Vytvořit commit.
-5. Nahrát větev na GitHub.
-6. Vytvořit pull request.
 
-Příklad základních příkazů:
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-create-commit-message.png)
 
-```powershell
-git checkout -b moje-zmena
-git status
-git add .
-git commit -m "Popis zmeny"
-git push -u origin moje-zmena
-```
+5. Přihlásit se na GitHub ve Visual Studio Code (pokud jste ještě neučinili)
 
-Pull request vytvoříte na GitHubu podle dokumentace:
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-github-signin.png)
 
-- Creating a pull request from a fork: <https://docs.github.com/articles/creating-a-pull-request-from-a-fork>
+6. Nahrát větev na GitHub.
 
-Kontrolní bod:
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-publish-branch.png)
 
-- po `git push` nevidíte červenou chybu,
-- na GitHubu vidíte svou větev nebo nový commit,
-- v pull requestu vidíte změny, které jste udělali.
+7. Vytvořit pull request.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/github-create-compare-pull-request-prompt.png)
+
+8. Kliknout na tlačítko `Create pull request`.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/github-create-compare-pull-request-form.png)
+
+9. Kliknout na tlačítko `Merge pull request`.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/github-merge-pull-request.png)
+
+10. Změnit branch na `main`.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-change-branch.png)
+
+11. Aktualizovat `main` branch.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-fetch-changes.png)
+
+12. Stáhnout nějnovější změny pro `main` branch.
+
+![Vytvoření repozitáře pomocí šablony](docs/assets/vscode-version-control-pull-changes.png)
+
+13. Cyklus dokočen, nyní můžete založit novou branch a začít od začátku.
 
 Před commitem nebo pushem může projekt spustit automatickou kontrolu. Pokud se proces zastaví, přečtěte chybovou zprávu a zkuste chybu opravit. Pokud si nejste jistí, pošlete ji mentorovi.
 
 ---
 
-## 14. Když něco nefunguje
-
-Chyby jsou normální součást práce. Neznamenají, že jste něco nenávratně pokazili.
-
-### `node`, `npm` nebo `git` není rozpoznán jako příkaz
-
-1. Zavřete PowerShell.
-2. Otevřete ho znovu.
-3. Zkuste příkaz ještě jednou.
-
-Pokud to nepomůže, instalace nástroje pravděpodobně neproběhla správně.
-
-### `code` není rozpoznán jako příkaz
-
-Otevřete Visual Studio Code přes nabídku Start a použijte `File -> Open Folder...`.
-
-### `npm install` skončí chybou
-
-Zkontrolujte:
-
-```powershell
-node -v
-npm -v
-```
-
-Pokud příkazy fungují, zkuste zavřít terminál a spustit `npm install` znovu.
-
-### Port 3000 je obsazený
-
-Next.js obvykle nabídne jiný port. Pokud se terminál zeptá, jestli chcete použít jiný port, potvrďte to.
-
-### Commit nebo push se zastaví
-
-Spusťte kontrolní příkazy podle nastavení projektu. Typicky může jít například o:
-
-```powershell
-npm run lint
-npm run build
-```
-
-Pokud nevíte, jaký příkaz použít, podívejte se do souboru `package.json` nebo se zeptejte mentora.
-
-### Nová stránka se nezobrazuje
-
-Zkontrolujte:
-
-- zda se soubor jmenuje `page.tsx`,
-- zda je ve správné složce,
-- zda otevíráte správnou adresu v prohlížeči,
-- zda vývojový server stále běží.
-
-### Kdy požádat o pomoc
-
-Požádejte o pomoc, když:
-
-- jste vyzkoušeli základní kontrolu a stále nevíte, co dál,
-- stejná chyba se opakuje pořád dokola,
-- nejste si jistí, jestli opravujete správnou věc.
-
-Když píšete mentorovi, pošlete:
-
-- co jste chtěli udělat,
-- jaký příkaz jste spustili,
-- co jste čekali,
-- co se místo toho stalo,
-- screenshot obrazovky nebo terminálu.
-
----
-
-## 15. Jak pracovat s dokumentací
+## 13. Jak pracovat s dokumentací
 
 Dokumentace není kniha, kterou musíte přečíst od začátku do konce.
 
@@ -527,7 +437,7 @@ Nepoužívejte náhodné návody bez ověření. Preferujte oficiální dokument
 
 ---
 
-## 16. Kde hledat další informace
+## 14. Kde hledat další informace
 
 | Téma | Co hledat | Odkaz |
 |---|---|---|
@@ -552,7 +462,7 @@ Nepoužívejte náhodné návody bez ověření. Preferujte oficiální dokument
 
 ---
 
-## 17. Tahák pojmů a příkazů
+## 15. Tahák pojmů a příkazů
 
 ### Krátký slovníček
 
@@ -567,28 +477,6 @@ Nepoužívejte náhodné návody bez ověření. Preferujte oficiální dokument
 - **komponenta**: menší část obrazovky, kterou lze použít opakovaně,
 - **endpoint**: serverová část aplikace, která vrací data,
 - **UI knihovna**: sada hotových komponent pro tvorbu obrazovek.
-
-### Tahák příkazů
-
-```powershell
-git --version
-node -v
-npm -v
-
-git clone https://github.com/YOUR-USERNAME/blum-next-app-template.git
-cd blum-next-app-template
-code .
-
-npm install
-npm run db:migrate
-npm run dev
-
-git checkout -b moje-zmena
-git status
-git add .
-git commit -m "Popis zmeny"
-git push -u origin moje-zmena
-```
 
 ---
 
