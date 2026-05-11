@@ -2,7 +2,7 @@
 
 Tento dokument popisuje, co budete během dvoutýdenní praxe vytvářet.
 
-Pracujete s připraveným projektem **Blum Next App Template**. Příprava prostředí, spuštění projektu a práce s Gitem jsou popsané v samostatném dokumentu `PRIRUCKA.md`.
+Pracujete s připraveným projektem **Blum Next App Template**. Příprava prostředí, spuštění projektu, struktura složek (včetně `[locale]`), lokalizace textů a práce s Gitem jsou popsané v samostatném dokumentu [`README.md`](README.md). Než začnete pracovat na zadání, projděte ho.
 
 ---
 
@@ -54,7 +54,6 @@ Oficiální dokumentace a inspirace:
 
 - Mantine Core: <https://mantine.dev/core/package/>
 - Mantine Forms: <https://mantine.dev/form/use-form/>
-- Mantine Notifications: <https://mantine.dev/x/notifications/>
 - Mantine UI šablony: <https://ui.mantine.dev/>
 - Next.js App Router: <https://nextjs.org/docs/app>
 - Next.js struktura projektu: <https://nextjs.org/docs/app/getting-started/project-structure>
@@ -68,25 +67,29 @@ Doporučení:
 - nepřepisujte celý projekt,
 - postupujte po malých krocích.
 
----
-
+### Referenční návrhy obrazovek
 
 Referenční návrhy obrazovek jsou vložené přímo u povinných úloh, kterých se týkají. Slouží jako inspirace pro rozložení stránky, hlavní prvky a způsob ovládání. Není nutné je kopírovat přesně pixel po pixelu. Důležité je zachovat hlavní prvky obrazovky a použít komponenty z Mantine UI.
 
 Obrázky použité pouze v dokumentaci neumisťujte do složky `public`. Složka `public` je určená pro statické soubory samotné aplikace. Referenční obrazovky uložte do složky `docs/assets/screens/`.
 
+---
+
 ## 4. Práce s daty
 
-Mentor určí, jakým způsobem budete v projektu ukládat data.
+Projekt má **připravenou lokální databázi** (SQLite + Drizzle ORM ve složce `src/db/`). Doporučená varianta je tuto databázi použít:
 
-Pro splnění základního zadání není nutné navrhovat vlastní databázi.
+- schéma tabulek najdete v `src/db/schemas/`,
+- migrace spustíte přes `npm run db:migrate`,
+- obsah si můžete prohlédnout přes `npm run db:studio` (viz README, sekce 9).
 
-Možné varianty:
+Pro splnění základního zadání není nutné navrhovat vlastní novou databázi — stačí přidat tabulku pro inzeráty do existujícího schématu.
 
-- ukázková data přímo v aplikaci,
+Pokud se vám práce s databází zdá příliš složitá, můžete po domluvě s mentorem zvolit jednodušší variantu:
+
+- ukázková data přímo v aplikaci (např. v poli konstant),
 - jednoduché uložení ve stavu aplikace,
-- `localStorage`,
-- připravená databáze, pokud ji mentor výslovně doporučí.
+- `localStorage`.
 
 Důležité je, aby aplikace uměla zobrazit data a pracovat s nimi v rámci základního scénáře.
 
@@ -224,7 +227,6 @@ Kde hledat inspiraci:
 - Mantine Select: <https://mantine.dev/core/select/>
 - Mantine Checkbox: <https://mantine.dev/core/checkbox/>
 - Mantine useForm: <https://mantine.dev/form/use-form/>
-- Mantine Notifications: <https://mantine.dev/x/notifications/>
 
 ---
 
@@ -341,12 +343,12 @@ Doporučené Mantine komponenty:
 
 - stejné komponenty jako u vytvoření inzerátu,
 - `Button`,
-- `Notification` nebo `Alert` pro potvrzení změny.
+- `Alert` pro potvrzení změny.
 
 Kde hledat inspiraci:
 
 - Mantine useForm: <https://mantine.dev/form/use-form/>
-- Mantine Notifications: <https://mantine.dev/x/notifications/>
+- Mantine Alert: <https://mantine.dev/core/alert/>
 - Next.js Dynamic Routes: <https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes>
 
 ---
@@ -593,20 +595,7 @@ Doporučení:
 
 ---
 
-## 8. Minimum pro úspěšné splnění
-
-Pro splnění praxe by aplikace měla zvládnout:
-
-- zobrazit přehled inzerátů,
-- zobrazit detail inzerátu,
-- vytvořit nový inzerát,
-- zobrazit kategorii inzerátu,
-- zobrazit stav inzerátu,
-- změnit stav inzerátu.
-
----
-
-## 9. Co se bude hodnotit
+## 8. Co se bude hodnotit
 
 Hodnotit se bude hlavně:
 
@@ -621,7 +610,7 @@ Nejde o to vytvořit nejhezčí nebo nejsložitější aplikaci. Důležité je,
 
 ---
 
-## 10. Kontrolní seznam před odevzdáním
+## 9. Kontrolní seznam před odevzdáním
 
 Před odevzdáním zkontrolujte:
 
@@ -639,11 +628,11 @@ Před odevzdáním zkontrolujte:
 
 ---
 
-## 11. Výstup na konci praxe
+## 10. Výstup na konci praxe
 
 Na konci praxe student odevzdá:
 
-- odkaz na fork nebo pull request na GitHubu,
+- odkaz na svůj GitHub repozitář (ten, který vznikl přes `Use this template`),
 - funkční aplikaci,
 - krátký popis toho, co aplikace umí,
 - informaci, které povinné části jsou hotové,
@@ -669,7 +658,7 @@ S čím jsem měl/a největší problém:
 
 ---
 
-## 12. Co si z praxe odnést
+## 11. Co si z praxe odnést
 
 Po dokončení praxe byste měli mít základní představu o tom:
 
